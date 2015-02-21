@@ -2,7 +2,7 @@ import groovy.transform.Field
 
 @Field final def model = (1..9)
 
-String s= '''123456789123456789123456789123456789123456789123456789123456789123456789123456789'''
+String s= '''123456789456789123789123456234567891567891234891234567345678912678912345912345678'''
 
 boolean valid = allNum(s) &&  exact81characters(s) && validSolution(s)
 
@@ -44,9 +44,7 @@ private boolean gridsValid(List<Integer> ints) {
 		grids[index] << o
 	}
 	
-	println grids
-	
 	grids.find { it.sort() != model} == null
 }
 
-println valid
+println 'answer ' + (valid? 'valid':'invalid')
