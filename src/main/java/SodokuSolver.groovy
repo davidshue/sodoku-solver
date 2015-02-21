@@ -16,7 +16,7 @@ rows.each { row ->
     valid = valid && row.sort() == model
 }
 
-def columns = [[],[],[],[],[],[],[],[],[]]
+def columns = [].withEagerDefault{[]}
 ints.eachWithIndex {o, i ->
     int index = i % 9
     columns[index] << o
@@ -26,7 +26,7 @@ columns.each { column ->
 }
 
 
-def grids = [[],[],[],[],[],[],[],[],[]]
+def grids = [].withEagerDefault{[]}
 
 ints.eachWithIndex {o, i ->
     int index = i.intdiv(27) * 3  + (i % 9).intdiv(3)
